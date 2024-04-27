@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Billing Information</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Redressed&family=Ubuntu:wght@400;700&display=swap");
+
+      :root {
+        --bg-clr: #f7f7f7;
+        --white: #fff;
+        --primary-clr: #000;
+        --secondary-clr: #d10024;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Ubuntu", sans-serif;
+      }
+
+      body {
+        background: var(--bg-clr);
+        font-size: 12px;
+        line-height: 20px;
+        color: var(--primary-clr);
+        padding: 0 20px;
+      }
+
+      .invoice {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        background: var(--white);
+          border:1px solid green;
+      border-radius:10px;
+      padding: 35px 90px;
+        position: relative;
+        margin: 20px auto;
+      }
+		.i_table_head {
+		    border-top: 1px solid;
+		    border-bottom: 1px solid;
+		}
+      .w_15 {
+        width: 15%;
+      }
+
+      .w_50 {
+        width: 50%;
+      }
+
+      .w_55 {
+        width: 20%;
+      }
+
+      .p_title {
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .i_row {
+        display: flex;
+      }
+      .i_rowblock{
+      display:block;
+      }
+		.i_logo{
+		  padding:10px;
+		  width:200px:
+		}
+		
+		.i_title{
+			padding-left:30px
+		}
+      .text_right {
+        text-align: right;
+      }
+
+      .invoice .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+
+      .invoice .header .i_row:last-child {
+        align-items: flex-end;
+      }
+
+     
+	.invoice .body .i_table .i_table_head .i_row .i_col.w_15:last-child {
+  border-right: 1px solid #ddd;
+}
+      
+
+      .invoice .header .i_row .i_address .p_title span {
+        font-weight: 400;
+        font-size: 12px;
+      }
+
+      .invoice .body .i_table .i_col p {
+        font-weight: 700;
+      }
+
+      .invoice .body .i_table .i_row .i_col {
+        padding: 12px 5px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .invoice .body .i_table .i_table_head .i_row {
+        font-weight: 700;
+        <!--background-color: #ddd;-->
+      }
+
+      .invoice .body .i_table .i_table_foot .grand_total_wrap {
+        margin-top: 20px;
+      }
+
+      .invoice .body .i_table .i_table_foot .grand_total_wrap .grand_total {
+        background: var(--secondary-clr);
+        color: var(--white);
+        padding: 10px 15px;
+      }
+
+      .invoice .body .i_table .i_table_foot .grand_total_wrap .grand_total p {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .invoice .footer {
+        margin-top: 30px;
+      }
+      .headrow {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .i_logo {
+          flex: 1;
+        }
+
+        .i_title {
+          flex: 1;
+          text-align: center;
+        }
+
+        .contact {
+          flex: 1;
+          text-align: right;
+          padding-right: 20px; /* Adjust as needed */
+        }
+      .bill{
+      		padding-top:70px;
+      }
+	  .date{
+      		padding-top:70px;
+      }
+      
+      button[type="submit"] {
+            width: 100%;
+            max-width: 140px;
+            height: 40px;
+            margin-top: 20px;
+            background-color: #358C5E;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2B6E4D;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+			align-items: flex-end;
+        }
+
+        .buttons a {
+            margin-top: 10px;
+            text-decoration: none;
+            color: #358C5E;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .buttons a:hover {
+            color: #2B6E4D;
+        }
+	
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="invoice">
+        
+		  <div class="headrow">
+  <div class="i_logo">
+    <img src="logo.png" alt="Meno Groceries Logo">
+    
+      <div class="bill"><p>BILL NO: 10021500567</p></div>
+  </div>
+  <div class="i_title">
+    <h2>Meno Groceries</h2>
+    <p class="p_title">No.14, Near Gracier hall, NH 42 highway road, Anna nagar, kochi.</p>
+  </div>
+  <div class="contact">
+    <div ><p>Telephone: 987654321</p></div>
+    <div class="date"></div>
+	    
+  </div>
+</div>
+
+        <div class="body">
+          <div class="i_table">
+            <div class="i_table_head">
+              <div class="i_row">
+                <div class="i_col w_15">
+                  <p class="p_title">ID</p>
+                </div>
+                <div class="i_col w_55">
+                  <p class="p_title">Item Name</p>
+                </div>
+                <div class="i_col w_15">
+                  <p class="p_title">Item Code</p>
+                </div>
+                <div class="i_col w_15">
+                  <p class="p_title">Quantity</p>
+                </div>
+                <div class="i_col w_15">
+                  <p class="p_title">Price</p>
+                </div>
+                <div class="i_col w_15">
+                  <p class="p_title">Tax</p>
+                </div>
+                <div class="i_col w_15">
+                  <p class="p_title">Total</p>
+                </div>
+                <div class="i_col w_15">
+                  <p class="p_title">Total Taxes</p>
+                </div>
+              </div>
+            </div>
+            <div class="i_table_body">
+              <!-- Iterate over the list of items retrieved from the backend -->
+              <tr th:each="item : ${ItemsList}">
+                <div class="i_row">
+                  <div class="i_col w_15">
+                    <p th:text="${item.id}"></p>
+                  </div>
+                  <div class="i_col w_55">
+                    <p th:text="${item.itemName}"></p>
+                  </div>
+                  <div class="i_col w_15">
+                    <p th:text="${item.itemCode}"></p>
+                  </div>
+                  <div class="i_col w_15">
+                    <p th:text="${item.quantity}"></p>
+                  </div>
+                  <div class="i_col w_15">
+                    <p th:text="${item.price}"></p>
+                  </div>
+                  <div class="i_col w_15">
+                    <p th:text="${item.tax}"></p>
+                  </div>
+                  <div class="i_col w_15">
+                    <p th:text="${item.total}"></p>
+                  </div>
+                  <div class="i_col w_15">
+                    <p th:text="${item.totalTaxes}"></p>
+                  </div>
+                </div>
+              </tr>
+            </div>
+            <div class="i_table_foot">
+              <div class="grand_total_wrap">
+                <div class="i_row">
+                  <div class="i_col w_15"></div>
+                  <div class="i_col w_15"></div>
+                  <div class="i_col w_55"></div>
+                  <div class="i_col w_15"></div>
+                  <div class="i_col w_15"></div>
+                  
+                  <div class="i_col w_15">
+                    <p class="p_title">Grand Total</p>
+                  </div>
+                 <div class="i_col w_15">
+	              <p class="grand_total"></p> <!-- Grand total will be filled by JavaScript -->
+	            </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <p>&copy; 2023 Meno Groceries. All rights reserved.</p>
+        </div>
+      </div>
+    </section>
+    <div class="buttons">
+        <button class="print-button" type="button">Print</button>
+    </div>
+    <script>
+      // JavaScript code to display the current date
+      const currentDate = new Date();
+      const formattedDate = currentDate.toLocaleDateString('en-GB');
+      document.querySelector('.date').innerHTML = `<p>${formattedDate}</p>`;
+      
+      // JavaScript code to calculate the grand total
+       const totalElements = document.querySelectorAll('.i_col.w_15:last-child p');
+  console.log(totalElements); // Check if totalElements is correctly targeting the elements
+  let grandTotal = 0;
+  totalElements.forEach(element => {
+    const total = parseFloat(element.textContent);
+    if (!isNaN(total)) {
+      console.log(`Adding ${total} to grand total`);
+      grandTotal += total;
+    } else {
+      console.error(`Invalid total value: ${element.textContent}`);
+    }
+  });
+  console.log(`Grand Total: ${grandTotal}`); // Check the calculated grand total
+  if (!isNaN(grandTotal)) {
+    document.querySelector('.grand_total').textContent = grandTotal.toFixed(2);
+  } else {
+    console.error("Invalid grand total value");
+  }
+  
+    </script>
+  </body>
+</html>

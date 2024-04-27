@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 91%;
+		    margin: 0 auto;
+		    padding: 4px;
+}
+        }
+
+        .rectangle {
+            border-radius: 10px;
+        }
+
+        .rectangle-13 {
+            height: 180px;
+            background: #eee;
+            margin-bottom: 20px;
+            width: auto;
+            margin:auto;
+        }
+
+        .group-1 {
+            display: flex;
+            flex-wrap: nowrap; /* Change flex direction to wrap */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rectangle-14,
+        .rectangle-15,
+        .rectangle-16,
+        .rectangle-17,
+        .rectangle-18,
+        .rectangle-19,
+        .rectangle-20 {
+             width: calc(90% - 10px); /* Adjusted width and margin */
+            max-width: 200px;
+            height: 34px;
+            margin: 0 5px 10px 5px; /* Adjusted margin */
+            background: #fff;
+            border: 1px solid rgba(41, 134, 89, 0.5);
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            max-width: 200px;
+            height: 40px;
+            margin-top: 20px;
+            background-color: #358C5E;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2B6E4D;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .buttons a {
+            margin-top: 10px;
+            text-decoration: none;
+            color: #358C5E;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .buttons a:hover {
+            color: #2B6E4D;
+        }
+        .form {
+            padding-top: 61px;
+            padding-left: 10px;
+        }
+
+        section {
+            /* Rectangle 86 */
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 90%;
+            margin: 0 auto; /* Center the section horizontally */
+            height: 400px;
+            /* Primary color */
+            border: 1px solid #298659;
+            border-radius: 10px;
+            display: block;
+        }
+
+        section div {
+            display: block;
+            height: 100px;
+        }
+
+        section .row1, .row2, .row3 {
+            border-bottom: 1px solid black;
+        }
+
+        .row1, .row2, .row3, .row4 {
+            display: flex;
+            justify-content: space-between; /* Evenly space the flex items */
+            align-items: center;
+            padding: 0 0px; /* Add padding to align with other elements */
+                margin-top: 6px;
+        }
+
+        .r1c1 {
+            width: 50%;
+        }
+
+        .r1c2 {
+            width: 50%;
+            text-align: right;
+        }
+
+        .tittle {
+            /* Billing Information */
+            width: auto;
+            height: 47px;
+            font-family: 'Heebo';
+            font-style: normal;
+            font-weight: 500px;
+            font-size: 32px;
+            line-height: 47px;
+            /* Primary color */
+            color: #298659;
+            text-align: center; /* Center the text */
+            margin-bottom: 10px; /* Add some space between elements */
+        }
+
+        .brand {
+            font-family: 'Heebo';
+            font-style: normal;
+            font-weight: 500px;
+            font-size: 32px;
+            color: #298659;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px; /* Add some space between elements */
+        }
+
+        h5 {
+            font-size: 16px;
+            color: #298659;
+            margin-bottom: 10px; /* Add some space between elements */
+        }
+
+        .brand img {
+            margin-left: auto; /* Move the image to the right */
+        }
+
+        .items {
+            width: 90%;
+            margin: auto;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .label {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #298659;
+            color: white;
+      		width:90%;
+      		margin:auto;
+      		border-radius:5px;
+        }
+
+        .label span {
+            flex-basis: calc(100% / 7);
+            text-align: center;
+        }
+
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #298659;
+        }
+
+        .item-row span {
+            flex-basis: calc(100% / 7);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1 class="tittle"><b>Billing Information</b></h1>
+<div class="items">
+    <h1 class="brand"> Brand Details <img class="img" src="logo.png"></h1>
+    <h5>This details will be shown at the top of the final Bill</h5>
+</div>
+<section>
+    <div class="row1">
+        <div class="r1c1">Brand Name
+            <p>Meno Groceries</p>
+        </div>
+        <div class="r1c2">Date</div>
+    </div>
+    <div class="row2">
+        <div class="r1c1">(subline)
+            <p>none</p>
+        </div>
+        <div class="r1c2">Contact <p>987654321</p></div>
+    </div>
+    <div class="row3">
+        <div class="r1c1">Address
+            <p>No.14, Near Gracier hall, NH 42 highway road, Anna nagar, kochi, 602 108.</p>
+        </div>
+        <div class="r1c2">GST <p>234232</p></div>
+    </div>
+    <div class="row4">
+        <div class="r1c1">Additional Note
+            <p>Thank you for purchasing</p>
+        </div>
+        <div class="r1c2">
+            <button>Edit Details</button>
+        </div>
+    </div>
+</section>
+<div class="items">
+    <h1 class="brand">Items <button class="img">Customer Details</button></h1>
+  </div>
+    <div class="label">
+        <span>Item Name</span>
+        <span>Item Code</span>
+        <span>Quantity</span>
+        <span>Price</span>
+        <span>Tax</span>
+        <span>Total</span>
+        <span>Total+Taxes</span>
+    </div>
+  
+    <div class="container">
+        <div class="rectangle rectangle-13">
+            <form class="form" th:action="@{/save-items}" th:object="${items}" method="POST">
+                <div class="group-1">
+                    <div style="flex-basis: 100%; display: flex; flex-direction: column;">
+                        <label for="itemName">Item Name:</label>
+                        <input type="text" id="itemName" class="rectangle rectangle-14" th:field="*{itemName}" placeholder="Item Name">
+                    </div>
+                    
+                    <div style="flex-basis: 100%; display: flex; flex-direction: column;">
+                        <label for="itemCode">Item Code:</label>
+                        <input type="text" id="itemCode" class="rectangle rectangle-15" th:field="*{itemCode}" placeholder="Item Code">
+                    </div>
+                    
+                    <div style="flex-basis: 50%; display: flex; flex-direction: column;">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" class="rectangle rectangle-16" th:field="*{quantity}" value="0" placeholder="Quantity">
+                    </div>
+                    
+                    <div style="flex-basis: 50%; display: flex; flex-direction: column;">
+                        <label for="price">Price:</label>
+                        <input type="text" id="price" class="rectangle rectangle-17" th:field="*{price}" placeholder="Price">
+                    </div>
+                    
+                    <div style="flex-basis: 50%; display: flex; flex-direction: column;">
+                        <label for="tax">Tax:</label>
+                        <input type="text" id="tax" class="rectangle rectangle-18" th:field="*{tax}" placeholder="Tax">
+                    </div>
+                    
+                    <div style="flex-basis: 50%; display: flex; flex-direction: column;">
+                        <label for="total">Total:</label>
+                        <input type="text" id="total" class="rectangle rectangle-19" th:field="*{total}" placeholder="Total">
+                    </div>
+                    
+                    <div style="flex-basis: 50%; display: flex; flex-direction: column;">
+                        <label for="totalTaxes">Total Taxes:</label>
+                        <input type="text" id="totalTaxes" class="rectangle rectangle-20" th:field="*{totalTaxes}" placeholder="Total Taxes">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="buttons">
+        <button type="submit">Save Items</button>
+        <a th:href="@{/show-bill}">Show Items</a>
+    </div>
+</div>
+</body>
+</html>
