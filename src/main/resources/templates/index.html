@@ -157,40 +157,25 @@
       		padding-top:70px;
       }
       
-      button[type="submit"] {
-            width: 100%;
-            max-width: 140px;
-            height: 40px;
-            margin-top: 20px;
-            background-color: #358C5E;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #2B6E4D;
-        }
-
-        .buttons {
-            display: flex;
-            flex-direction: column;
-			align-items: flex-end;
-        }
-
-        .buttons a {
-            margin-top: 10px;
-            text-decoration: none;
-            color: #358C5E;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .buttons a:hover {
-            color: #2B6E4D;
-        }
+      .buttons {
+		  display: flex;
+		  justify-content: flex-end; /* Align the button to the right */
+		  margin-top: 20px; /* Add some spacing from the invoice */
+		}
+		
+		.print-button {
+		  background-color: #358C5E;
+		  color: #fff;
+		  border: none;
+		  border-radius: 5px;
+		  padding: 10px 20px; /* Adjust padding */
+		  cursor: pointer;
+		  transition: background-color 0.3s ease;
+		}
+		
+		.print-button:hover {
+		  background-color: #2B6E4D;
+		}
 	
     </style>
   </head>
@@ -331,5 +316,28 @@
   }
   
     </script>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    
+    <script>
+  // Add an event listener to the print button
+  document.querySelector('.print-button').addEventListener('click', function() {
+    // Select the HTML element to be converted to PDF
+    const element = document.querySelector('section');
+
+    // Options for PDF generation
+    const options = {
+      filename: 'invoice.pdf', // File name of the PDF
+      image: { type: 'jpeg', quality: 0.98 }, // Image quality
+      html2canvas: { scale: 2 }, // Scale factor for HTML to canvas conversion
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' } // PDF format and orientation
+    };
+
+    // Generate PDF
+    html2pdf().from(element).set(options).save(); // Save the PDF file
+  });
+</script>
+    
   </body>
 </html>

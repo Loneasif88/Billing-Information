@@ -285,21 +285,48 @@
                     
                     <div style="flex-basis: 50%; display: flex; flex-direction: column;">
                         <label for="total">Total:</label>
-                        <input type="text" id="total" class="rectangle rectangle-19" th:field="*{total}" placeholder="Total">
+                        <input type="text" id="total" class="rectangle rectangle-19" th:value="${items.total}" placeholder="Total" name="total" readonly>
                     </div>
                     
                     <div style="flex-basis: 50%; display: flex; flex-direction: column;">
                         <label for="totalTaxes">Total Taxes:</label>
-                        <input type="text" id="totalTaxes" class="rectangle rectangle-20" th:field="*{totalTaxes}" placeholder="Total Taxes">
+                        <input type="text" id="totalTaxes" class="rectangle rectangle-20" th:value="${items.totalTaxes}" placeholder="Total Taxes" name="totalTaxes" readonly>
                     </div>
                 </div>
-            </form>
+            
         </div>
     </div>
-    <div class="buttons">
-        <button type="submit">Save Items</button>
+    <div class="buttons" >
+        <button type="submit" >Save Items</button>
         <a th:href="@{/show-bill}">Show Items</a>
     </div>
+    </form>
 </div>
+
+<script>
+    // Function to calculate total and total taxes dynamically
+    function calculateTotal() {
+        // Get the values of Price, Quantity, and Tax fields
+        var price = parseFloat(document.getElementById('price').value);
+        var quantity = parseFloat(document.getElementById('quantity').value);
+        var tax = parseFloat(document.getElementById('tax').value);
+
+        // Calculate Total
+        var total = price * quantity;
+
+        // Calculate Total Taxes
+        var totalTaxes = total + (total * (tax / 100));
+
+        // Update the Total and Total Taxes fields
+        document.getElementById('total').value = total.toFixed(2);
+        document.getElementById('totalTaxes').value = totalTaxes.toFixed(2);
+    }
+
+    // Add event listeners to Price, Quantity, and Tax fields
+    document.getElementById('price').addEventListener('input', calculateTotal);
+    document.getElementById('quantity').addEventListener('input', calculateTotal);
+    document.getElementById('tax').addEventListener('input', calculateTotal);
+</script>
+
 </body>
 </html>

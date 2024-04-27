@@ -30,10 +30,10 @@ public class Items {
 	    private int tax;
 	    
 	    @Column(name = "Total")
-	    private long total;
+	    private String total;
 	    
 	    @Column(name = "Total+Taxes")
-	    private long totalTaxes;
+	    private String totalTaxes;
 	
 	// Getters and Setters 
 	    public int getId() {
@@ -69,16 +69,16 @@ public class Items {
 	public void setTax(int tax) {
 		this.tax = tax;
 	}
-	public long getTotal() {
+	public String getTotal() {
 		return total;
 	}
-	public void setTotal(long total) {
+	public void setTotal(String total) {
 		this.total = total;
 	}
-	public long getTotalTaxes() {
+	public String getTotalTaxes() {
 		return totalTaxes;
 	}
-	public void setTotalTaxes(long totalTaxes) {
+	public void setTotalTaxes(String totalTaxes) {
 		this.totalTaxes = totalTaxes;
 	}
 	
